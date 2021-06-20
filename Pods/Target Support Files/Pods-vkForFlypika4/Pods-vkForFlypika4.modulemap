@@ -1,0 +1,6 @@
+framework module Pods_vkForFlypika4 {
+  umbrella header "Pods-vkForFlypika4-umbrella.h"
+
+  export *
+  module * { export * }
+}
