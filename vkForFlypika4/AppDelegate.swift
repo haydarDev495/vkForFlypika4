@@ -37,20 +37,17 @@ window = UIWindow()
     }
     // Mark AuthServiceDelegate
     func authServiceShouldShow(_ viewController: UIViewController) {
-        print("authServiceShouldShow")
         print(#function)
-        window?.rootViewController?.present(viewController, animated: true, completion: nil) 
+        window?.rootViewController?.present(viewController, animated: true, completion: nil)
 
     }
     
     func authServiceSignIn() {
-        print("authServiceSignIn")
         print(#function)
 
     }
     
     func authServiceDidSignInFail() {
-        print("authServiceDidSignInFail")
         print(#function)
 
     }
