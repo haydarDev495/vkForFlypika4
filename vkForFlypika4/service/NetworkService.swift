@@ -8,29 +8,52 @@
 import Foundation
 
 
-final class NetworkService  {
+protocol Networking {
+    func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> Void)
+}
+
+final class NetworkService: Networking {
+
     
     private let authService: AuthService
     
     init(authService: AuthService = AppDelegate.shared().authService) {
         self.authService = authService
     }
-    func getFit() {
-        
-        var components = URLComponents()
-        
-        guard let token = authService.token else { return }
-        let params = ["filters": "post,photo"]
+    func request(path: String, params: [String : String], completion: @escaping (Data?, Error?) -> Void) {
+        guard let token = authService.token else {return}
+        let params = ["filters": "post, photo" ]
         var allParams = params
-        allParams["acces_token"] = token
+        allParams["access_token"] = token
         allParams["v"] = API.version
-            
+        let url = self.url(from: path, params: allParams)
+        let session = URLSession.init(configuration: .default)
+        let request = URLRequest(url: url)
+        let task = session.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data,error)
+                print(data)
+            }
+        }
+        print(url)
+
+        task.resume()
+
+    }
+    
+    func getFeed() {
+        
+
+
+
+    }
+    private func url(from path: String, params: [String: String]) -> URL {
+        var components = URLComponents()
         components.scheme = API.scheme
         components.host = API.host
         components.path = API.newsFeed
-        components.queryItems = allParams.map{ URLQueryItem(name: $0, value: $1)}
-        
-       let url = components.url!
-        print(url)
+        components.queryItems = params.map {  URLQueryItem(name: $0, value: $1) }
+      return components.url!
     }
 }
+

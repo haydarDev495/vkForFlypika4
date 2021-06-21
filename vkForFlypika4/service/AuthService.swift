@@ -22,7 +22,7 @@ class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     private let vkSdk: VKSdk
     
     var token : String? {
-        return VKSdk.accessToken().accessToken
+        return VKSdk.accessToken()?.accessToken
     }
         
     weak var delegate: AuthServiceDelegate?
