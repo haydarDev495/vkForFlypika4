@@ -3,26 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBA2680099800848E28 /* AppDelegate.swift */; };
-		0DF6BEBF2680099800848E28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBE2680099800848E28 /* ViewController.swift */; };
-		0DF6BEC22680099800848E28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BEC02680099800848E28 /* Main.storyboard */; };
+		0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBE2680099800848E28 /* AuthViewController.swift */; };
+		0DF6BEC22680099800848E28 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BEC02680099800848E28 /* AuthViewController.storyboard */; };
 		0DF6BEC42680099C00848E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BEC32680099C00848E28 /* Assets.xcassets */; };
 		0DF6BEC72680099C00848E28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BEC52680099C00848E28 /* LaunchScreen.storyboard */; };
+		0DF6BECF26800E3F00848E28 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BECE26800E3F00848E28 /* AuthService.swift */; };
 		D8B1653DED61BABB57648FB3 /* Pods_vkForFlypika4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4996B3F3771FD9E10D43DE /* Pods_vkForFlypika4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DF6BEB72680099800848E28 /* vkForFlypika4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkForFlypika4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF6BEBA2680099800848E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DF6BEBE2680099800848E28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0DF6BEC12680099800848E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DF6BEBE2680099800848E28 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0DF6BEC12680099800848E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthViewController.storyboard; sourceTree = "<group>"; };
 		0DF6BEC32680099C00848E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF6BEC62680099C00848E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DF6BEC82680099C00848E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DF6BECE26800E3F00848E28 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		8D4996B3F3771FD9E10D43DE /* Pods_vkForFlypika4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkForFlypika4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C844B455E298B91C884B8361 /* Pods-vkForFlypika4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkForFlypika4.release.xcconfig"; path = "Target Support Files/Pods-vkForFlypika4/Pods-vkForFlypika4.release.xcconfig"; sourceTree = "<group>"; };
 		E3D9219F24D79F97DF4673BB /* Pods-vkForFlypika4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkForFlypika4.debug.xcconfig"; path = "Target Support Files/Pods-vkForFlypika4/Pods-vkForFlypika4.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,13 +64,30 @@
 			isa = PBXGroup;
 			children = (
 				0DF6BEBA2680099800848E28 /* AppDelegate.swift */,
-				0DF6BEBE2680099800848E28 /* ViewController.swift */,
-				0DF6BEC02680099800848E28 /* Main.storyboard */,
+				0DF6BED026800E4200848E28 /* service */,
+				0DF6BED126800FA100848E28 /* Auth */,
 				0DF6BEC32680099C00848E28 /* Assets.xcassets */,
 				0DF6BEC52680099C00848E28 /* LaunchScreen.storyboard */,
 				0DF6BEC82680099C00848E28 /* Info.plist */,
 			);
 			path = vkForFlypika4;
+			sourceTree = "<group>";
+		};
+		0DF6BED026800E4200848E28 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				0DF6BECE26800E3F00848E28 /* AuthService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		0DF6BED126800FA100848E28 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0DF6BEBE2680099800848E28 /* AuthViewController.swift */,
+				0DF6BEC02680099800848E28 /* AuthViewController.storyboard */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		362BB0F60A136968F7E8466A /* Frameworks */ = {
@@ -85,7 +104,6 @@
 				E3D9219F24D79F97DF4673BB /* Pods-vkForFlypika4.debug.xcconfig */,
 				C844B455E298B91C884B8361 /* Pods-vkForFlypika4.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,7 +168,7 @@
 			files = (
 				0DF6BEC72680099C00848E28 /* LaunchScreen.storyboard in Resources */,
 				0DF6BEC42680099C00848E28 /* Assets.xcassets in Resources */,
-				0DF6BEC22680099800848E28 /* Main.storyboard in Resources */,
+				0DF6BEC22680099800848E28 /* AuthViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF6BEBF2680099800848E28 /* ViewController.swift in Sources */,
+				0DF6BECF26800E3F00848E28 /* AuthService.swift in Sources */,
+				0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */,
 				0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,12 +230,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0DF6BEC02680099800848E28 /* Main.storyboard */ = {
+		0DF6BEC02680099800848E28 /* AuthViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0DF6BEC12680099800848E28 /* Base */,
 			);
-			name = Main.storyboard;
+			name = AuthViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		0DF6BEC52680099C00848E28 /* LaunchScreen.storyboard */ = {
