@@ -17,6 +17,7 @@
 		0DF6BED52680745400848E28 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BED42680745400848E28 /* FeedViewController.storyboard */; };
 		0DF6BED826807A4200848E28 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BED726807A4200848E28 /* NetworkService.swift */; };
 		0DF6BEDA26807B2200848E28 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BED926807B2200848E28 /* Api.swift */; };
+		0DF6BEE0268225D000848E28 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEDF268225D000848E28 /* ProfileViewController.swift */; };
 		D8B1653DED61BABB57648FB3 /* Pods_vkForFlypika4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4996B3F3771FD9E10D43DE /* Pods_vkForFlypika4.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0DF6BED42680745400848E28 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		0DF6BED726807A4200848E28 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0DF6BED926807B2200848E28 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		0DF6BEDF268225D000848E28 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8D4996B3F3771FD9E10D43DE /* Pods_vkForFlypika4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vkForFlypika4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C844B455E298B91C884B8361 /* Pods-vkForFlypika4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkForFlypika4.release.xcconfig"; path = "Target Support Files/Pods-vkForFlypika4/Pods-vkForFlypika4.release.xcconfig"; sourceTree = "<group>"; };
 		E3D9219F24D79F97DF4673BB /* Pods-vkForFlypika4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vkForFlypika4.debug.xcconfig"; path = "Target Support Files/Pods-vkForFlypika4/Pods-vkForFlypika4.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				0DF6BEBA2680099800848E28 /* AppDelegate.swift */,
 				0DF6BED026800E4200848E28 /* service */,
 				0DF6BED126800FA100848E28 /* Auth */,
+				0DF6BEDE268225AC00848E28 /* profile */,
 				0DF6BED62680746100848E28 /* Feed */,
 				0DF6BEC32680099C00848E28 /* Assets.xcassets */,
 				0DF6BEC52680099C00848E28 /* LaunchScreen.storyboard */,
@@ -108,6 +111,14 @@
 				0DF6BED42680745400848E28 /* FeedViewController.storyboard */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		0DF6BEDE268225AC00848E28 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				0DF6BEDF268225D000848E28 /* ProfileViewController.swift */,
+			);
+			path = profile;
 			sourceTree = "<group>";
 		};
 		362BB0F60A136968F7E8466A /* Frameworks */ = {
@@ -247,6 +258,7 @@
 				0DF6BECF26800E3F00848E28 /* AuthService.swift in Sources */,
 				0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */,
 				0DF6BED32680744400848E28 /* FeedViewController.swift in Sources */,
+				0DF6BEE0268225D000848E28 /* ProfileViewController.swift in Sources */,
 				0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,25 +27,19 @@ final class NetworkService: Networking {
         allParams["access_token"] = token
         allParams["v"] = API.version
         let url = self.url(from: path, params: allParams)
-        let session = URLSession.init(configuration: .default)
         let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.async {
-                completion(data,error)
-                print(data)
-            }
-        }
+        let task = createDataTask(from: request, completion: completion)
         print(url)
 
-        task.resume()
-
+        task.resume() 
     }
     
-    func getFeed() {
-        
-
-
-
+    private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask{
+        return URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data,error)
+            }
+        }
     }
     private func url(from path: String, params: [String: String]) -> URL {
         var components = URLComponents()

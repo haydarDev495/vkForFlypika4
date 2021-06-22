@@ -43,9 +43,10 @@ window = UIWindow()
     }
     
     func authServiceSignIn() {
-        let feedVC = UIStoryboard(name: "FeedViewController", bundle: nil).instantiateInitialViewController() as! FeedViewController
-        let navVC = UINavigationController(rootViewController: feedVC)
-        window?.rootViewController = navVC
+        
+        let feedVC = UIStoryboard(name: "FeedViewController", bundle: nil).instantiateInitialViewController() as! UITabBarController
+//        let navVC = UINavigationController(rootViewController: feedVC)
+        window?.rootViewController = feedVC
         print(#function)
 
     }
