@@ -9,23 +9,36 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
-    private let networkService: Networking = NetworkService()
-    
+//    private let networkService: Networking = NetworkService()
+    private var fetcher : DataFetcher = NetworkDataFetcher(networking: NetworkService())
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let params = ["filters": "post, photo"]
-        networkService.request(path: API.newsFeed, params: params) { data, error in
-            if let error = error {
-                print("error \(error.localizedDescription)")
-            }
-            guard let data = data else { return }
-            let json = try? JSONSerialization.jsonObject(with: data, options: [])
-            print("json \(String(describing: json))")
+        fetcher.getFeed { FeedResponse in
+            guard let feedResponse = FeedResponse else {return}
+            FeedResponse?.items.map({ FeedItem in
+                print(FeedItem.date)
+            })
         }
+//        let params = ["filters": "post, photo"]
+//        networkService.request(path: API.newsFeed, params: params) { data, error in
+//            if let error = error {
+//                print("error \(error.localizedDescription)")
+//            }
+//            let decoder = JSONDecoder()
+//            decoder.keyDecodingStrategy = .convertFromSnakeCase
+//            guard let data = data else { return }
+//            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//            print("json \(String(describing: json))")
+//            let response = try? decoder.decode(FeedResponseWrapped.self, from: data)
+////            print(response)
+//            response?.response.items.map({ FeedItem  in
+//                print(FeedItem.text)
+//            })
+//
+//        }
 
-        
+
     }
 
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DD5D33E2683E3A600B08D71 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5D33D2683E3A600B08D71 /* FeedResponse.swift */; };
+		0DD5D3402683E4F700B08D71 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5D33F2683E4F700B08D71 /* NetworkDataFetcher.swift */; };
 		0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBA2680099800848E28 /* AppDelegate.swift */; };
 		0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBE2680099800848E28 /* AuthViewController.swift */; };
 		0DF6BEC22680099800848E28 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6BEC02680099800848E28 /* AuthViewController.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DD5D33D2683E3A600B08D71 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		0DD5D33F2683E4F700B08D71 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		0DF6BEB72680099800848E28 /* vkForFlypika4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkForFlypika4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF6BEBA2680099800848E28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF6BEBE2680099800848E28 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DD5D33C2683E39300B08D71 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				0DD5D33D2683E3A600B08D71 /* FeedResponse.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		0DF6BEAE2680099800848E28 = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +100,10 @@
 		0DF6BED026800E4200848E28 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				0DD5D33C2683E39300B08D71 /* models */,
 				0DF6BECE26800E3F00848E28 /* AuthService.swift */,
 				0DF6BED726807A4200848E28 /* NetworkService.swift */,
+				0DD5D33F2683E4F700B08D71 /* NetworkDataFetcher.swift */,
 				0DF6BED926807B2200848E28 /* Api.swift */,
 			);
 			path = service;
@@ -253,11 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD5D33E2683E3A600B08D71 /* FeedResponse.swift in Sources */,
 				0DF6BEDA26807B2200848E28 /* Api.swift in Sources */,
 				0DF6BED826807A4200848E28 /* NetworkService.swift in Sources */,
 				0DF6BECF26800E3F00848E28 /* AuthService.swift in Sources */,
 				0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */,
 				0DF6BED32680744400848E28 /* FeedViewController.swift in Sources */,
+				0DD5D3402683E4F700B08D71 /* NetworkDataFetcher.swift in Sources */,
 				0DF6BEE0268225D000848E28 /* ProfileViewController.swift in Sources */,
 				0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */,
 			);
