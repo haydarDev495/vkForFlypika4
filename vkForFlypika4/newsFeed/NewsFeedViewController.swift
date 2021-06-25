@@ -14,20 +14,14 @@ protocol NewsFeedDisplayLogic: class {
 
 class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 
-  var interactor: NewsFeedBusinessLogic?
+    // table view
+    @IBOutlet weak var tableView: UITableView!
+    
+    var interactor: NewsFeedBusinessLogic?
   var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
+    
+    private var feedViewModel = FeedViewModel.init(cells: [])
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
   
   // MARK: Setup
   
@@ -51,10 +45,49 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setup()
+    
+    tableView.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
+    
+    interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNewsFeed)
   }
   
   func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
 
-  }
+    switch viewModel {
   
+ 
+
+    case .displayNewsFeed(feedViewModel: let feedViewModel):
+        self.feedViewModel = feedViewModel
+        tableView.reloadData()
+    }
+}
+}
+
+// Mark
+// Mark - configure TableViewDataSource
+extension NewsFeedViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feedViewModel.cells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseId, for: indexPath) as! NewsFeedCell
+        let cellViewModel = feedViewModel.cells[indexPath.row]
+        cell.set(viewModel: cellViewModel)
+        return cell
+    }
+
+
+}
+
+// Mark
+// Mark - configure TableViewDelegate
+extension NewsFeedViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 212
+    }
 }

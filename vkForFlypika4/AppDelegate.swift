@@ -44,9 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
     
     func authServiceSignIn() {
         
-        let feedVC = UIStoryboard(name: "FeedViewController", bundle: nil).instantiateInitialViewController() as! UITabBarController
+        let NewsFeedVC = UIStoryboard(name: "NewsFeedViewController", bundle: nil).instantiateInitialViewController() as! UITabBarController
         //        let navVC = UINavigationController(rootViewController: feedVC)
-        window?.rootViewController = feedVC
+        window?.rootViewController = NewsFeedVC
         print(#function)
         
     }

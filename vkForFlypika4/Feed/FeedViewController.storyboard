@@ -29,7 +29,7 @@
         <!--Профиль-->
         <scene sceneID="N2L-CJ-c3q">
             <objects>
-                <viewController id="e1O-EW-lmw" customClass="ProfileViewController" customModule="vkForFlypika4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e1O-EW-lmw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKa-T5-MYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +68,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YhC-h2-VxR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z6U-ls-cuu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
