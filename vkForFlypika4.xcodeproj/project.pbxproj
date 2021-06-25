@@ -16,6 +16,8 @@
 		0D240F642684F1940042CF89 /* NewsFeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D240F632684F1940042CF89 /* NewsFeedViewController.storyboard */; };
 		0D240F672684FC560042CF89 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D240F662684FC560042CF89 /* NewsFeedCell.swift */; };
 		0D240F692684FCAE0042CF89 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D240F682684FCAE0042CF89 /* NewsFeedCell.xib */; };
+		0D240F6C2685CED90042CF89 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D240F6B2685CED90042CF89 /* WebImageView.swift */; };
+		0D240F6E2685CF680042CF89 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D240F6D2685CF680042CF89 /* UIViewController + Storyboard.swift */; };
 		0DD5D33E2683E3A600B08D71 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5D33D2683E3A600B08D71 /* FeedResponse.swift */; };
 		0DD5D3402683E4F700B08D71 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD5D33F2683E4F700B08D71 /* NetworkDataFetcher.swift */; };
 		0DF6BEBB2680099800848E28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF6BEBA2680099800848E28 /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 		0D240F632684F1940042CF89 /* NewsFeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeedViewController.storyboard; sourceTree = "<group>"; };
 		0D240F662684FC560042CF89 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		0D240F682684FCAE0042CF89 /* NewsFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
+		0D240F6B2685CED90042CF89 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		0D240F6D2685CF680042CF89 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		0DD5D33D2683E3A600B08D71 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		0DD5D33F2683E4F700B08D71 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		0DF6BEB72680099800848E28 /* vkForFlypika4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkForFlypika4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,15 @@
 				0D240F682684FCAE0042CF89 /* NewsFeedCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		0D240F6A2685CEAC0042CF89 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D240F6B2685CED90042CF89 /* WebImageView.swift */,
+				0D240F6D2685CF680042CF89 /* UIViewController + Storyboard.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0DD5D33C2683E39300B08D71 /* models */ = {
@@ -133,6 +146,7 @@
 				0DF6BEDE268225AC00848E28 /* profile */,
 				0DF6BED62680746100848E28 /* Feed */,
 				0DD5D3412684DE9B00B08D71 /* newsFeed */,
+				0D240F6A2685CEAC0042CF89 /* Helpers */,
 				0DF6BEC32680099C00848E28 /* Assets.xcassets */,
 				0DF6BEC52680099C00848E28 /* LaunchScreen.storyboard */,
 				0DF6BEC82680099C00848E28 /* Info.plist */,
@@ -313,11 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD5D33E2683E3A600B08D71 /* FeedResponse.swift in Sources */,
+				0D240F6C2685CED90042CF89 /* WebImageView.swift in Sources */,
 				0D240F5A2684E49D0042CF89 /* NewsFeedPresenter.swift in Sources */,
 				0DF6BEDA26807B2200848E28 /* Api.swift in Sources */,
 				0DF6BED826807A4200848E28 /* NetworkService.swift in Sources */,
 				0D240F5F2684E49D0042CF89 /* NewsFeedInteractor.swift in Sources */,
 				0DF6BECF26800E3F00848E28 /* AuthService.swift in Sources */,
+				0D240F6E2685CF680042CF89 /* UIViewController + Storyboard.swift in Sources */,
 				0DF6BEBF2680099800848E28 /* AuthViewController.swift in Sources */,
 				0DF6BED32680744400848E28 /* FeedViewController.swift in Sources */,
 				0DD5D3402683E4F700B08D71 /* NetworkDataFetcher.swift in Sources */,
