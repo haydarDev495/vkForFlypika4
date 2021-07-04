@@ -13,7 +13,11 @@ protocol NewsFeedPresentationLogic {
 }
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
+    
+    
     weak var viewController: NewsFeedDisplayLogic?
+    var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol = FeedCellLayoutCalculator()
+
     
     let dateFormatter: DateFormatter = {
         
@@ -42,8 +46,15 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
         
         let profile = self.profile(for: feedItem.sourceId, profiles: profiles, groups: groups)
         
+        let photoAttachment = self.photoAttachment(feedItem: feedItem)
+        
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachment: photoAttachment)
+
+        
+        
         let date = Date(timeIntervalSince1970: feedItem.date)
         let dateTitle = dateFormatter.string(from: date)
+        
         return FeedViewModel.Cell.init(
             iconUrlString: profile.photo,
             name: profile.name,
@@ -52,16 +63,32 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
             likes: String(feedItem.likes?.count ?? 0),
             comments: String(feedItem.comments?.count ?? 0),
             shares: String(feedItem.reposts?.count ?? 0),
-            views: String(feedItem.views?.count ?? 0))
+            views: String(feedItem.views?.count ?? 0),
+            photoAttachement:photoAttachment,
+            sizes: sizes
+)
+        
+
+        
+        
     }
     private func profile(for sourceId: Int, profiles: [Profile], groups: [Group]) -> profileRepresentable {
         let profileOrGroups: [profileRepresentable] = sourceId >= 0 ? profiles : groups
+        
         
         let normalSourceId = sourceId >= 0 ? sourceId: -sourceId
         let profileRepresentable = profileOrGroups.first { myProfileRepresentable in
             myProfileRepresentable.id == normalSourceId
         }
         return profileRepresentable!
-
+        
+    }
+    private func photoAttachment(feedItem: FeedItem) -> FeedViewModel.FeedCellPhotoAttachment? {
+        guard  let photos = feedItem.attachments?.compactMap({ (attachment) in
+            attachment.photo
+        }), let firstPhoto = photos.first else {
+            return nil
+        }
+        return FeedViewModel.FeedCellPhotoAttachment.init(photoUrlString: firstPhoto.srcBIG, widht: firstPhoto.widht, height: firstPhoto.height)
     }
 }

@@ -26,6 +26,11 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Войти в VK"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ox-aq-iDN"/>
                                 </connections>

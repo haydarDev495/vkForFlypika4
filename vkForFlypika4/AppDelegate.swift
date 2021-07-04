@@ -57,3 +57,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthServiceDelegate {
     }
 }
 
+// https://api.vk.com/method/friends.get?count&access_token=bf1ddef97e24242a5e97a5ba4bdb401cce0d967ac56695ccd3a6a59b644e0f64452c458262d181afff8c7&v=5.131
