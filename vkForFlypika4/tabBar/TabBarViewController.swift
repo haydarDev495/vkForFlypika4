@@ -33,13 +33,13 @@ private extension TabBarViewController {
         
         let ProfileViewController = UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as! UINavigationController
         let ProfileTabBarItem = UITabBarItem()
-        ProfileTabBarItem.title = "Today"
+        ProfileTabBarItem.title = "Главная"
         ProfileTabBarItem.image = ProfileImage.withRenderingMode(.alwaysOriginal)
         ProfileViewController.tabBarItem = ProfileTabBarItem
         
         let NewsFeedViewController = UIStoryboard(name: "NewsFeed", bundle: nil) .instantiateInitialViewController() as! UINavigationController
         let NewsFeedTabBarItem = UITabBarItem()
-        NewsFeedTabBarItem.title = "Forecast"
+        NewsFeedTabBarItem.title = "Профиль"
         NewsFeedTabBarItem.image = NewsFeedImage.withRenderingMode(.alwaysOriginal)
         NewsFeedViewController.tabBarItem = NewsFeedTabBarItem
         
