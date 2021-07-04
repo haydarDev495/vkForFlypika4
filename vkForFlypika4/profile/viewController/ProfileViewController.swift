@@ -34,6 +34,14 @@ class ProfileViewController: UIViewController {
         
         
     }
+    @IBAction func MoreInformationButtonAction(_ sender: Any) {
+        let newVC = UIStoryboard(name: "Info", bundle: nil).instantiateInitialViewController() as! InfoViewController
+//        newVC.modalTransitionStyle = .flipHorizontal
+        
+        newVC.modalPresentationStyle = .formSheet
+        self.present(newVC, animated: true, completion: nil)
+        
+    }
 }
 
 private extension ProfileViewController {
